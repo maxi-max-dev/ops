@@ -1,0 +1,19 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "max-ops-feishu-event-bridge",
+  "main": "worker.ts",
+  "compatibility_date": "2026-08-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "ai": {
+    "binding": "AI"
+  },
+  "vars": {
+    "MAXOPS_ALLOW_HTTP_FALLBACK": "false"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

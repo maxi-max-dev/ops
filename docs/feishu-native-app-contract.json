@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-01",
+  "decision": "base_application_mode",
+  "app_title": "OPS · AI 作战台（演示）",
+  "visual_revision": "native-v2",
+  "theme": "feishu-yunlan-light",
+  "native_app_url": "https://example.feishu.cn/app/APP_ID",
+  "source_base_url": "https://example.feishu.cn/base/BASE_TOKEN",
+  "source_of_truth": "feishu_base_only",
+  "external_h5_role": "fallback_only",
+  "pages": [
+    "今天",
+    "项目详情",
+    "项目",
+    "任务",
+    "动态",
+    "问题／反馈",
+    "产物／回执"
+  ],
+  "today_overview": {
+    "flight_strip": ["今日 · 4 件", "待验收 · 1", "外部阻塞 · 1", "Agent 回执 · 2"],
+    "source_table": "任务",
+    "filter": "今日 = true",
+    "default_sort": "项目选项顺序",
+    "machine_ids_visible": false
+  },
+  "project_detail": {
+    "project": "Project Aurora · 评委演示",
+    "task_count": 2,
+    "agent_event_count": 6,
+    "question_reply_count": 1,
+    "artifact_receipt_count": 2,
+    "machine_ids_visible": false
+  },
+  "canaries": {
+    "same_tenant_same_base": "pass",
+    "feishu_web_desktop": "pass",
+    "project_deep_dive": "pass",
+    "base_ask_ai": "pass",
+    "connector_continuity": "pass",
+    "app_to_ask_ai_button": "fail_removed",
+    "desktop_client": "unavailable",
+    "mobile_device": "unavailable",
+    "mainland_network": "unavailable",
+    "anonymous_judge_access": "blocked_by_approval"
+  },
+  "judge_path_max_private_live": [
+    "打开原生应用的今天页",
+    "打开项目详情查看 Agent、问题、产物与 receipt",
+    "切到并排的同一 Base 问问 AI 标签进行自然语言预览确认"
+  ],
+  "preferred_desktop_evidence": [
+    "docs/feishu-native-evidence/07-feishu-native-v2-today.png",
+    "docs/feishu-native-evidence/08-feishu-native-v2-project-detail.png"
+  ]
+}

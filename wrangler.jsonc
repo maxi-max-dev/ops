@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "max-ops-feishu-private",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "max-ops-feishu-private",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "./drizzle"
+    }
+  ],
+  "vars": {
+    "FEISHU_H5_APP_ID": "cli_REPLACE_AT_DEPLOY",
+    "FEISHU_SERVICE_APP_ID": "cli_REPLACE_AT_DEPLOY",
+    "MAXOPS_FRESH_BASE_APP_TOKEN": "REPLACE_AT_DEPLOY",
+    "MAXOPS_FRESH_BASE_URL": "https://example.feishu.cn/base/BASE_TOKEN"
+  },
+  "triggers": {
+    "crons": ["* * * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

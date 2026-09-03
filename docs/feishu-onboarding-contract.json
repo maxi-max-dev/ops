@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-09-01",
+  "product_standard": "novice_one_install_then_pair",
+  "target_flow": [
+    "Click one Feishu authorization action",
+    "Provision a user-owned five-table Base and native views",
+    "Bind the React dashboard to that same Base without asking for a locator",
+    "Name one Agent and send one generated one-time pairing instruction",
+    "Agent reads the connection-test assignment and writes a real progress receipt"
+  ],
+  "user_never_enters": [
+    "app_id",
+    "app_secret",
+    "app_token",
+    "table_id",
+    "message_id",
+    "instance_id",
+    "task_id",
+    "agent_id",
+    "run_id"
+  ],
+  "portable_layer": {
+    "version": "maxops-portable-base/1",
+    "tables": ["项目", "任务", "Agent 事件", "问题／反馈", "产物／回执"],
+    "native_views": ["今天", "项目", "动态", "项目详情"],
+    "seed": "one sanitized 连接测试 assignment",
+    "source": "worker/onboarding-contract.mjs"
+  },
+  "connection_layer": {
+    "metadata_only": ["encrypted OAuth refresh state", "encrypted Base mapping", "pairing code hash", "Agent credential hash", "revocation and first-receipt state"],
+    "business_rows_in_service_database": false,
+    "dashboard_reads": "the authorized user's Base on every request",
+    "dashboard_writes": "the same Base plus a receipt row",
+    "agent_transport": "maxops-webhook-write/1 envelope from OPS Agent Connector v2",
+    "local_secret": "Agent-specific bearer only; never the Feishu App Secret"
+  },
+  "security": {
+    "oauth_state": "AES-GCM sealed and cookie-bound with a ten-minute expiry",
+    "pairing": "single-use, ten-minute code stored only as SHA-256",
+    "agent_scope": "one workspace, one human name, one explicit test task",
+    "revocation": "credential lookup fails immediately after revoked_at",
+    "workspace_revoke": "revokes service and Agents while preserving the user-owned Base",
+    "public_origin": "HTTPS custom origin required; github.io and workers.dev are rejected for production installation"
+  },
+  "verified_local_canary": {
+    "status": "PASS",
+    "coverage": [
+      "OAuth redirect is Feishu-only and contains no secret",
+      "five tables, required fields, four native views and one connection-test task",
+      "automatic table and field rediscovery",
+      "one-time pairing exchange rejects replay",
+      "Connector bootstrap reads the explicit connection-test task",
+      "progress writes to the Base and returns a receipt",
+      "same idempotency key and payload returns the existing receipt",
+      "Agent revoke denies the old bearer",
+      "OPS revoke preserves the Base",
+      "desktop and 390x844 responsive browser fail-closed UI"
+    ],
+    "test": "tests/one-click-onboarding.test.mjs"
+  },
+  "unverified_real_canaries": {
+    "second_tenant_template_copy": "UNAVAILABLE",
+    "native_app_mode_fidelity": "UNAVAILABLE",
+    "feishu_ai_agent_fidelity": "UNAVAILABLE",
+    "automation_fidelity": "UNAVAILABLE",
+    "cross_tenant_permissions": "UNAVAILABLE",
+    "desktop_real_host": "UNAVAILABLE",
+    "mobile_real_device": "UNAVAILABLE",
+    "china_network_reachability": "UNAVAILABLE"
+  },
+  "public_installation": {
+    "state": "permission_gate",
+    "public_origin": "https://install.example",
+    "runtime": "DEPLOYED_FAIL_CLOSED",
+    "runtime_isolation": "onboarding-only Worker plus onboarding metadata D1; private Agent APIs return 404",
+    "required_app_type": "Feishu Store App; non-public listing is sufficient for an install link",
+    "required_runtime": "confidential OAuth callback on an approved custom origin",
+    "remaining_gate": "The project owner must approve and create the non-public Feishu Store App",
+    "reason_static_pages_is_insufficient": "Feishu-created applications are confidential OAuth clients and require a client secret during token exchange"
+  },
+  "no_hosting_fallback": {
+    "state": "technical_only",
+    "flow": "copy the Base template, create a tenant self-built app, keep its secret locally, and run feishu_base_direct",
+    "default_for_novices": false
+  },
+  "verified_private_baseline": [
+    "Base five-table projection",
+    "Ask AI natural-language task intake",
+    "Connector read, claim, acknowledgement, progress, question, artifact, finish and receipt"
+  ]
+}

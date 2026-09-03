@@ -1,0 +1,13 @@
+# Keep private canary evidence and legacy media in the private repository, but
+# never place it in a source archive made for reviewers or a competition.
+/app/feishu-embedded-evidence export-ignore
+/docs/feishu-native-evidence export-ignore
+/FEISHU-EMBEDDED-UI.md export-ignore
+/FEISHU-NATIVE-APP.md export-ignore
+/public export-ignore
+/videos export-ignore
+/.goal-task export-ignore
+/work export-ignore
+
+# Local-only synchronization tooling is not submission source.
+/scripts/sync-collab-board.mjs export-ignore

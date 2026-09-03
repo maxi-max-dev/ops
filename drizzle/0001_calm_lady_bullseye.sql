@@ -1,0 +1,1 @@
+ALTER TABLE `commands` ADD `attempts` integer NOT NULL;

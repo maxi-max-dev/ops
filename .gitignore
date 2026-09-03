@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+/runtime/config.local.json
+
+# vercel
+.vercel
+
+/dist/
+/dist-pages/
+/.wrangler/
+/tsconfig.tsbuildinfo
+/outputs/
+/work/
+
+# HyperFrames generated artifacts
+/videos/*/renders/
+/videos/*/snapshots/
+/videos/*/snapshots*/
+/videos/*/.thumbnails/
+/videos/*/.hyperframes/frame-packets/
+
+# Private/local recording evidence: keep on this Mac, never publish with the demo repo.
+/app/feishu-embedded-evidence/
+/docs/feishu-native-evidence/
+/videos/max-ops-feishu-live/assets/
+/videos/max-ops-feishu-live/capture/assets/
+/videos/max-ops-feishu-live/capture/extracted/
+/videos/*/assets/feishu-real-*.jpg
+/videos/*/assets/04-pairdesk-local-rc.png
+/videos/*/compositions/pairdesk-real-chat.html
