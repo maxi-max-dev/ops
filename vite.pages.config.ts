@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
-const publicBase = process.env.PAIRDESK_PUBLIC_BASE ?? "/max-ops-demo/";
+const publicBase = process.env.PAIRDESK_PUBLIC_BASE ?? "/ops/";
 
 export default defineConfig({
   root: "github-pages",

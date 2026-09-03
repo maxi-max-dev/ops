@@ -13,7 +13,7 @@ import {
 test("a launcher accepts personal and enterprise Feishu Base targets only", () => {
   const baseUrl = "https://my.feishu.cn/base/example?table=tasks";
   const enterpriseUrl = "https://acme.feishu.cn/base/example?table=tasks";
-  const launcher = buildFeishuAiLauncherUrl("https://maxi-max-dev.github.io/max-ops-demo/", baseUrl);
+  const launcher = buildFeishuAiLauncherUrl("https://maxi-max-dev.github.io/ops/", baseUrl);
   const parsedLauncher = new URL(launcher);
 
   assert.equal(parseFeishuAiHandoff(parsedLauncher), baseUrl);

@@ -2,7 +2,7 @@
 
 ## 当前默认
 
-默认分享入口是 `https://maxi-max-dev.github.io/max-ops-demo/`。它是纯静态构建：匿名访问、无需安装、无需运行自有服务，演示数据和交互只存在于浏览器本地。Base 仍是 LIVE 任务的唯一真源，公开页面不读取或复制任何私有 Base 数据。
+默认分享入口是 `https://maxi-max-dev.github.io/ops/`。它是纯静态构建：匿名访问、无需安装、无需运行自有服务，演示数据和交互只存在于浏览器本地。Base 仍是 LIVE 任务的唯一真源，公开页面不读取或复制任何私有 Base 数据。
 
 ## `Command/Ctrl + K`
 
@@ -31,7 +31,7 @@
 私人启动链接格式：
 
 ```text
-https://maxi-max-dev.github.io/max-ops-demo/#feishu-ai=https%3A%2F%2Fmy.feishu.cn%2Fbase%2Fexample%3Ftable%3Dtasks
+https://maxi-max-dev.github.io/ops/#feishu-ai=https%3A%2F%2Fmy.feishu.cn%2Fbase%2Fexample%3Ftable%3Dtasks
 ```
 
 解析器只接受 URL fragment 中名为 `feishu-ai` 的值，并且目标必须同时满足：

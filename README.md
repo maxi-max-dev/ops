@@ -2,7 +2,7 @@
 
 A personal mission-control dashboard whose default shareable UI is the static GitHub Pages build. Feishu Base remains the only live task source, while the public build uses labelled synthetic data and can run without a server. OPS is the current contest working name; the production/UI name remains OPS.
 
-[Open the public evaluator preview](https://maxi-max-dev.github.io/max-ops-demo/)
+[Open the public evaluator preview](https://maxi-max-dev.github.io/ops/)
 
 Private Feishu-native and H5 canaries are intentionally excluded from the public submission.
 
@@ -161,9 +161,9 @@ npm run build:pages
 
 The only public preview is GitHub Pages:
 
-`https://maxi-max-dev.github.io/max-ops-demo/`
+`https://maxi-max-dev.github.io/ops/`
 
-`npm run build:pages` produces the static artifact published by the separate public `max-ops-demo` repository. It deliberately runs with labelled demo data and contains no Feishu credentials, Base records, D1 data, or Connector secrets. The private source repository remains the authority for the real Feishu/Base integration.
+`npm run build:pages` produces the static artifact published from this repository. It deliberately runs with labelled demo data and contains no Feishu credentials, Base records, D1 data, or Connector secrets. Private runtime configuration and live Base data remain outside this repository.
 
 The public page includes a truthful `接入数据与 Agent` onboarding action. Its novice target is two steps: sign in with Feishu so a OPS Base workspace is provisioned in the user's tenant, then name an Agent and send it one scoped pairing instruction. Users never type internal message/task/run IDs. The Beta Worker now implements OAuth, five-table provisioning and rediscovery, same-Base dashboard reads/writes, one-time Connector v2 pairing, progress receipts, and immediate revocation. This cross-tenant path still requires a non-public Feishu Store App and a confidential OAuth callback, so the current public UI fails closed while those pieces are unpublished. The public [`max-ops-agent-template`](https://github.com/maxi-max-dev/max-ops-agent-template) Connector remains the reporting runtime. A zero-hosting fallback—copy the five-table Base, create a self-built Feishu app, keep its secret locally, and install the Connector—is retained as an advanced technical route, not presented as novice onboarding. See [`docs/feishu-onboarding-contract.json`](./docs/feishu-onboarding-contract.json) and [`docs/ONE-CLICK-BETA.md`](./docs/ONE-CLICK-BETA.md).
 
