@@ -63,7 +63,7 @@ The Agent API records execution and communication evidence. It does **not** dire
 - idempotency, retry, receipt, and source-of-truth policies;
 - a local, non-production `self_check` command.
 
-The public [OPS Agent Template](https://github.com/maxi-max-dev/max-ops-agent-template) contains the Codex reference manifest, a zero-dependency CLI, a validator, and a dry-run self-test. A future Agent can generate its own adapter from this contract; passing the validator proves manifest completeness, not a real Feishu end-to-end run.
+The reviewed [OPS Agent Connector release](https://github.com/maxi-max-dev/ops/releases/tag/v0.1.0) contains the Codex reference manifest, a zero-dependency CLI, a validator, and a dry-run self-test. A future Agent can generate its own adapter from this contract; passing the validator proves manifest completeness, not a real Feishu end-to-end run.
 
 ## 6. Acceptance levels
 

@@ -1,4 +1,4 @@
-export const MAXOPS_CONNECTOR_URL = "https://github.com/maxi-max-dev/max-ops-agent-template";
+export const MAXOPS_CONNECTOR_URL = "https://github.com/maxi-max-dev/ops/releases/download/v0.1.0/max-ops-agent-connector-2.1.0.tgz";
 
 export const ONE_CLICK_INSTALL_ENDPOINTS = Object.freeze({
   status: "/api/install/status",

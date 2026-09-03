@@ -9,8 +9,8 @@ The public competition surface is limited to:
 1. `npm run build:pages` output from `dist-pages/`. This build uses
    `public-submission/`, synthetic data, the OPS display name, and no server
    bindings.
-2. The public `max-ops-agent-template` repository, after its tests and
-   validators pass.
+2. The reviewed OPS Agent Connector package attached to this repository's
+   `v0.1.0` release after its tests and validators pass.
 3. If source code is explicitly required, a `git archive` made from a reviewed
    commit. `.gitattributes` excludes private evidence, legacy media, and
    local-only project material from that archive.

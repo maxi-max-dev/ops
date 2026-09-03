@@ -690,7 +690,7 @@ async function installationRoutes(request: Request, env: OnboardingEnv, url: URL
       exchange_url: `${origin}/pair/${pairMatch[1]}/exchange`,
       one_time: true,
       expires_at: new Date(pair.expires_at).toISOString(),
-      supported_installer: { repository: "https://github.com/maxi-max-dev/max-ops-agent-template", adapter: "webhook_write" },
+      supported_installer: { repository: "https://github.com/maxi-max-dev/ops", adapter: "webhook_write" },
     };
     if ((request.headers.get("accept") ?? "").includes("text/html")) {
       const safeName = pair.agent_name.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[char] || char);
@@ -718,7 +718,7 @@ async function installationRoutes(request: Request, env: OnboardingEnv, url: URL
       credential: { type: "bearer", token: agentToken },
       bootstrap_url: `${origin}/api/install/connector/bootstrap`,
       connector: {
-        repository: "https://github.com/maxi-max-dev/max-ops-agent-template",
+        repository: "https://github.com/maxi-max-dev/ops",
         adapter: "webhook_write",
         environment: {
           MAXOPS_ADAPTER: "webhook_write",
